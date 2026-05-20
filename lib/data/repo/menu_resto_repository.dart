@@ -15,6 +15,7 @@ class MenuRestoRepository extends ApiClient{
           .toList();
       return listMenuResto;
     } on DioException catch (e) {
+      //debugprint tmabahin
       throw Exception(e);
     }
     }
