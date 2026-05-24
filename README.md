@@ -1,17 +1,141 @@
-# flutter_pos
+# Flutter POS - Menu Resto
 
-A new Flutter project.
+Flutter POS application using BLoC pattern and REST API integration with Dio.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Fetch menu restaurant data from API
+- State management using Flutter BLoC
+- REST API integration using Dio
+- JSON model parsing
+- Repository pattern implementation
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech Stack
+
+- Flutter
+- Flutter BLoC
+- Dio
+- REST API
+
+---
+
+
+## Architecture
+
+```text
+UI → Event → Bloc → Repository → API
+                      ↓
+                    State
+                      ↓
+                     UI
+```
+
+---
+
+## API Configuration
+
+Base URL:
+
+```dart
+_dio.options.baseUrl = 'http://127.0.0.1:8000/api';
+```
+
+File location:
+
+```text
+lib/core/api_client.dart
+```
+
+---
+
+## API Endpoint
+
+### Get All Menu
+
+```http
+GET /menu-resto
+```
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/gandul-jago/flutter_pos.git
+```
+
+### Enter Project Folder
+
+```bash
+cd flutter_pos
+```
+
+### Install Dependencies
+
+```bash
+flutter pub get
+```
+
+### Run Project
+
+```bash
+flutter run
+```
+
+---
+
+## Dependencies
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_bloc:
+  dio:
+```
+
+---
+
+## Notes
+
+### Localhost Setup
+
+If using Android Emulator, replace:
+
+```text
+127.0.0.1
+```
+
+with:
+
+```text
+10.0.2.2
+```
+
+Example:
+
+```dart
+_dio.options.baseUrl = 'http://10.0.2.2:8000/api';
+```
+
+---
+
+## Current Progress
+
+- [x] API Integration
+- [x] Repository Pattern
+- [x] BLoC State Management
+- [x] JSON Parsing
+- [ ] Menu List UI
+- [ ] Create Menu
+- [ ] Update Menu
+- [ ] Delete Menu
+
+---
